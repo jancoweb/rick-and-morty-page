@@ -1,10 +1,22 @@
 import { useGlobalContext } from '../../context/ContextProvider';
 import './style.css';
 import api from '../../services/api'
+import { useEffect, useState } from 'react';
 
 export default function NavBar() {
 
-  const { setChar, setNotFound } = useGlobalContext();
+  const { setChar, setNotFound, setAllChars, setPage } = useGlobalContext();
+
+  async function getAll() {
+    try {
+      let response = await api.get('/character');
+      let data = response.data.results;
+      setChar()
+      setAllChars(data);
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
 
   async function getSearch(e) {
     e.preventDefault()
@@ -12,7 +24,8 @@ export default function NavBar() {
     if (name == '') return setChar()
     try {
       let response = await api.get(`/character/?name=${name}`);
-      setChar(response.data.results);
+      setChar(response.data.results[0]);
+      setAllChars()
       setNotFound(false)
     } catch (error) {
       console.log(error.message)
@@ -27,11 +40,16 @@ export default function NavBar() {
 
     try {
       let response = await api.get(`/character/${id}`);
-      setChar([response.data])
+      setChar(response.data)
+      setAllChars()
     } catch (error) {
       console.log(error.message)
     }
   }
+
+  useEffect(() => {
+    setChar()
+  }, [])
 
   return (
     <>
@@ -47,7 +65,7 @@ export default function NavBar() {
           <button className='random' onClick={() => getRandomSearch()}>Random Search</button>
         </div>
         <div className="show-all-btn-container">
-          <button className='all'>Show All</button>
+          <button className='all' onClick={() => getAll()}>Show All</button>
         </div>
       </nav>
     </>
