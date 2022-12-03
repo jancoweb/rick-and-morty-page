@@ -21,6 +21,11 @@
   background-color: #000;
   color: #fff;
   overflow: hidden;
+  box-shadow: 0 0 9px #8bcf21;
+}
+.each:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .each img {
   width: 80px;
