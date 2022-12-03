@@ -21,6 +21,18 @@ export default function NavBar() {
     }
   }
 
+  async function getRandomSearch() {
+    let id = Math.floor(Math.random() * 826)
+    if (id == 0) id = 1;
+
+    try {
+      let response = await api.get(`/character/${id}`);
+      setChar([response.data])
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   return (
     <>
       <nav>
@@ -32,7 +44,7 @@ export default function NavBar() {
             <input type="text" placeholder="Search now" name='name' />
             <button className='search' type="submit">Search</button>
           </form>
-          <button className='random'>Random Search</button>
+          <button className='random' onClick={() => getRandomSearch()}>Random Search</button>
         </div>
         <div className="show-all-btn-container">
           <button className='all'>Show All</button>
