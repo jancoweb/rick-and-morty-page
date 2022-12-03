@@ -19,6 +19,7 @@ export default function GetChar() {
             <h3>Species: {char.species}</h3>
             <h3>Status: <span style={{ color: char.status == 'Dead' ? '#fb6467ff' : char.status == 'Alive' ? '#8bcf21' : '#fff' }}>{char.status}</span></h3>
             <h3>Origin: {char.origin.name}</h3>
+            <h3>Last seen: {char.location.name}</h3>
           </div>
         </div>
       }
