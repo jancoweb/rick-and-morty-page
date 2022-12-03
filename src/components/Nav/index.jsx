@@ -4,7 +4,7 @@ import api from '../../services/api'
 
 export default function NavBar() {
 
-  const { setChar } = useGlobalContext();
+  const { setChar, setNotFound } = useGlobalContext();
 
   async function getSearch(e) {
     e.preventDefault()
@@ -13,8 +13,11 @@ export default function NavBar() {
     try {
       let response = await api.get(`/character/?name=${name}`);
       setChar(response.data.results);
+      setNotFound(false)
     } catch (error) {
       console.log(error.message)
+      setChar()
+      setNotFound(true)
     }
   }
 
