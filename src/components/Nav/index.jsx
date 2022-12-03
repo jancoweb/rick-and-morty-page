@@ -54,7 +54,7 @@ export default function NavBar() {
   return (
     <>
       <nav>
-        <div className="logo-container" onClick={() => { setChar(), setAllChars(), setNotFound() }}>
+        <div className="logo-container" onClick={() => { setChar(), setAllChars(), setNotFound(), setPage(1) }}>
           <img src="https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" style={{ width: '180px' }} />
         </div>
         <div className="search-bar-container">
