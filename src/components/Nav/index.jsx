@@ -13,6 +13,7 @@ export default function NavBar() {
       let data = response.data.results;
       setChar()
       setAllChars(data);
+      setPage(1)
     } catch (error) {
       console.log(error.message)
     }

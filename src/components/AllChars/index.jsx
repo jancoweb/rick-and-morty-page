@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useGlobalContext } from "../../context/ContextProvider";
 import api from "../../services/api";
 import './style.css'
