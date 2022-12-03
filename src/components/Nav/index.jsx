@@ -1,7 +1,7 @@
 import { useGlobalContext } from '../../context/ContextProvider';
 import './style.css';
 import api from '../../services/api'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function NavBar() {
 
@@ -54,7 +54,7 @@ export default function NavBar() {
   return (
     <>
       <nav>
-        <div className="logo-container">
+        <div className="logo-container" onClick={() => { setChar(), setAllChars(), setNotFound() }}>
           <img src="https://logosmarcas.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" style={{ width: '180px' }} />
         </div>
         <div className="search-bar-container">

@@ -16,7 +16,6 @@ export default function MainPage() {
       {notFound &&
         <div className="not-found-message">
           <h1 >Character not found!</h1>
-          <h4>make sure you type the name right</h4>
         </div>
       }
       {char &&

@@ -52,3 +52,7 @@ button:hover{
 .all:hover {
   background-color: #fae46bff;
 }
+.logo-container:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
