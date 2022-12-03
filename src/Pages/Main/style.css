@@ -6,7 +6,7 @@
   font-family: 'orbitron', sans-serif;
 }
 .main-page-wrapper {
-  background-image: url('https://images.squarespace-cdn.com/content/v1/57433cc43c44d8db180cd231/1546962591286-A0IL1S8JTZKQMS0MOEJP/rick-animated-head-Burp.gif?format=2500w');
+  /* background-image: url('https://images.squarespace-cdn.com/content/v1/57433cc43c44d8db180cd231/1546962591286-A0IL1S8JTZKQMS0MOEJP/rick-animated-head-Burp.gif?format=2500w'); */
   background-color: black;
   height: 100vh;
   overflow: hidden;
@@ -15,8 +15,11 @@
   align-items: center;
 }
 .not-found-message {
-  position: relative;
+  position: absolute;
   color: #fff;
   top: 150px;
   text-align: center;
+}
+.main-page-wrapper {
+  position: relative;
 }
