@@ -58,3 +58,6 @@ button:focus{
   position: absolute;
   top: 870px;
 }
+button:active{
+  color: #fff;
+}
